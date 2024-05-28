@@ -29,15 +29,6 @@ void StateManager::change_state(int in_state_type)
     }
 }
 
-std::optional<IState*> StateManager::get_current_state()
-{
-    if (states_.contains(current_state_))
-    {
-        return std::optional<IState*>{states_.at(current_state_).get()};
-    }
-    return {};
-}
-
 bool StateManager::has_state(int in_state_type)
 {
     return states_.contains(in_state_type);
@@ -45,24 +36,27 @@ bool StateManager::has_state(int in_state_type)
 
 void StateManager::handle_input()
 {
-    if (IState* state = get_current_state().value())
+    if (has_state(current_state_))
     {
+        std::unique_ptr<IState>& state = states_[current_state_];
         state->handle_input();
     }
 }
 
 void StateManager::update()
 {
-    if (IState* state = get_current_state().value())
+    if (has_state(current_state_))
     {
+        std::unique_ptr<IState>& state = states_[current_state_];
         state->handle_input();
     }
 }
 
 void StateManager::render()
 {
-    if (IState* state = get_current_state().value())
+    if (has_state(current_state_))
     {
+        std::unique_ptr<IState>& state = states_[current_state_];
         state->handle_input();
     }
 }

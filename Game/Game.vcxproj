@@ -334,7 +334,9 @@
     <Content Include="States\MenuState.h" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="GameData\" />
     <Folder Include="States\Modules\Interfaces\" />
+    <Folder Include="Window\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

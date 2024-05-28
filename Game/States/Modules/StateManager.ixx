@@ -15,7 +15,6 @@ public:
     void add_state(std::unique_ptr<IState> state) override;
     void remove_state(int in_state_type) override;
     void change_state(int in_state_type) override;
-    std::optional<IState*> get_current_state() override;
     bool has_state(int in_state_type) override;
     void handle_input() override;
     void update() override;
