@@ -5,6 +5,10 @@
 class MenuState : public BaseState 
 {
 public:
+    explicit MenuState(int in_state_type) :
+        BaseState(in_state_type)
+    {}
+    
     void on_create() override;
     void on_destroy() override;
 
@@ -13,4 +17,6 @@ public:
     
     void update() override;
     void render() override;
+
+    void handle_input() override;
 };

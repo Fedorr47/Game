@@ -18,24 +18,30 @@
     <ClCompile Include="Game.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainTestStruct.cpp">
+    <ClCompile Include="States\BaseState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="States\MainState.cpp">
+    <ClCompile Include="States\GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="States\MenuState.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="States\Modules\StateManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="States\Modules\StateManager.ixx" />
+    <ClCompile Include="States\Modules\Interfaces\InterfaceState.ixx" />
+    <ClCompile Include="States\Modules\Interfaces\InterfaceStateManager.ixx" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="States\MainState.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="States\GameState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="States\IState.h">
+    <ClInclude Include="States\BaseState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MainTestStruct.h">
+    <ClInclude Include="States\MenuState.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

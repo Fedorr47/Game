@@ -23,3 +23,8 @@ void MenuState::update()
 void MenuState::render()
 {
 }
+
+void MenuState::handle_input()
+{
+    BaseState::handle_input();
+}

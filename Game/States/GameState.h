@@ -1,11 +1,23 @@
 ﻿#pragma once
 
-#include "IState.h"
+#include "BaseState.h"
 
-class GameState : public IState
+class GameState : public BaseState
 {
 public:
-    virtual void handle_input() override;
-    virtual void update() override;
-    virtual void render() override;
+    explicit GameState(int in_state_type) :
+        BaseState(in_state_type)
+    {}
+    
+    void on_create() override;
+    void on_destroy() override;
+
+    void activate() override;
+    void deactivate() override;
+    
+    void update() override;
+    void render() override;
+
+    void handle_input() override;
 };
+

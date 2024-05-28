@@ -6,7 +6,7 @@ void StateManager::add_state(std::unique_ptr<IState> state)
     auto insert_pair = states_.try_emplace(state->get_state_type() ,std::move(state));
 }
 
-void StateManager::remove_state(int32_t in_state_type)
+void StateManager::remove_state(int in_state_type)
 {
     std::erase_if ( 
          states_,
@@ -21,7 +21,7 @@ void StateManager::remove_state(int32_t in_state_type)
     }
 }
 
-void StateManager::change_state(int32_t in_state_type)
+void StateManager::change_state(int in_state_type)
 {
     if (states_.contains(in_state_type))
     {
@@ -38,7 +38,7 @@ std::optional<IState*> StateManager::get_current_state()
     return {};
 }
 
-bool StateManager::has_state(int32_t in_state_type)
+bool StateManager::has_state(int in_state_type)
 {
     return states_.contains(in_state_type);
 }

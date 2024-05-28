@@ -1,7 +1,8 @@
 #include <SFML/Graphics.hpp>
 
-#include "MainTestStruct.h"
-#include "States/MainState.h"
+import StateManager;
+#include "States/GameState.h"
+#include "States/MenuState.h"
 
 int main()
 {
