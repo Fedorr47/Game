@@ -5,11 +5,6 @@ export constexpr int INVALID_STATE = -1;
 export class IState
 {
 public:
-    IState(const IState& other) = delete;
-    IState(IState&& other) = delete;
-    IState& operator=(const IState& other) = delete;
-    IState& operator=(IState&& other) = delete;
-
     IState() = default;
     virtual ~IState() = default;
 

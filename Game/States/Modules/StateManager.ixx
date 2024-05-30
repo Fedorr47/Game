@@ -3,6 +3,7 @@ export module StateManager;
 import <unordered_map>;
 import <memory>;
 import <optional>;
+import <mutex>;
 import InterfaceState;
 import InterfaceStateManager;
 
@@ -11,6 +12,9 @@ using StatesHolder = std::unordered_map<int, std::unique_ptr<IState>>;
 export class StateManager final : public IStateManager
 {
 public:
+
+    static StateManager* get_instance();
+
     // Interface's methods
     void add_state(std::unique_ptr<IState> state) override;
     void remove_state(int in_state_type) override;
@@ -26,4 +30,12 @@ public:
 private:
     int current_state_{INVALID_STATE};
     StatesHolder states_;
+    static StateManager* pinstance_;
+    static std::mutex mutex_;
+
+protected:
+    explicit StateManager() : IStateManager()
+    {
+    }
+    ~StateManager() {}
 };

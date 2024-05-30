@@ -324,11 +324,14 @@
       <LinkCompiled>true</LinkCompiled>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClCompile>
+    <ClCompile Include="Window\BaseWindow.cpp" />
+    <ClCompile Include="Window\Modules\Interfaces\InterfaceWindow.ixx" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="States\BaseState.h" />
     <ClInclude Include="States\GameState.h" />
     <ClInclude Include="States\MenuState.h" />
+    <ClInclude Include="Window\BaseWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="States\MenuState.h" />
@@ -336,7 +339,6 @@
   <ItemGroup>
     <Folder Include="GameData\" />
     <Folder Include="States\Modules\Interfaces\" />
-    <Folder Include="Window\" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
