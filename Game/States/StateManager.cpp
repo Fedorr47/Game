@@ -1,8 +1,5 @@
 ﻿#include "StateManager.h"
 
-StateManager* StateManager::pinstance_{ nullptr };
-std::recursive_mutex StateManager::mutex_;
-
 StateManager* StateManager::get_instance()
 {
     std::lock_guard<std::recursive_mutex> lock(mutex_);

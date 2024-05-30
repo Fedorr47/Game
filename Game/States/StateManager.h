@@ -29,8 +29,8 @@ public:
 private:
     int current_state_{INVALID_STATE};
     StatesHolder states_;
-    static StateManager* pinstance_;
-    static std::recursive_mutex mutex_;
+    static inline StateManager* pinstance_;
+    static inline std::recursive_mutex mutex_;
 
 protected:
     explicit StateManager() = default;

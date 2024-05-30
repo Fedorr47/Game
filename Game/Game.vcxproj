@@ -176,6 +176,7 @@
     <ClCompile Include="States\StateManager.cpp" />
     <ClCompile Include="Window\BaseWindow.cpp" />
     <ClCompile Include="Window\Modules\Interfaces\InterfaceWindow.ixx" />
+    <ClCompile Include="Window\StratageWindow\SFML\SFMLWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="States\BaseState.h" />
@@ -183,6 +184,7 @@
     <ClInclude Include="States\MenuState.h" />
     <ClInclude Include="States\StateManager.h" />
     <ClInclude Include="Window\BaseWindow.h" />
+    <ClInclude Include="Window\StratageWindow\SFML\SFMLWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="States\MenuState.h" />
