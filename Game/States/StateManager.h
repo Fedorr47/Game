@@ -2,7 +2,6 @@
 
 import <unordered_map>;
 import <memory>;
-import <optional>;
 import <mutex>;
 import InterfaceState;
 import InterfaceStateManager;
@@ -31,11 +30,9 @@ private:
     int current_state_{INVALID_STATE};
     StatesHolder states_;
     static StateManager* pinstance_;
-    static std::mutex mutex_;
+    static std::recursive_mutex mutex_;
 
 protected:
-    explicit StateManager() : IStateManager()
-    {
-    }
-    ~StateManager() {}
+    explicit StateManager() = default;
+    ~StateManager() = default;
 };

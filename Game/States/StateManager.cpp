@@ -1,10 +1,11 @@
 ﻿#include "StateManager.h"
 
 StateManager* StateManager::pinstance_{ nullptr };
-std::mutex StateManager::mutex_;
+std::recursive_mutex StateManager::mutex_;
 
 StateManager* StateManager::get_instance()
 {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
     if (pinstance_ == nullptr)
     {
         pinstance_ = new StateManager();
@@ -14,11 +15,13 @@ StateManager* StateManager::get_instance()
 
 void StateManager::add_state(std::unique_ptr<IState> state)
 {
-   states_.try_emplace(state->get_state_type() ,std::move(state));
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
+    states_.try_emplace(state->get_state_type() ,std::move(state));
 }
 
 void StateManager::remove_state(int in_state_type)
 {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
     std::erase_if ( 
          states_,
          [in_state_type](const auto& state)
@@ -34,12 +37,14 @@ void StateManager::remove_state(int in_state_type)
 
 bool StateManager::has_state(int in_state_type)
 {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
     return states_.contains(in_state_type);
 }
 
 
 void StateManager::change_state(int in_state_type)
 {
+    std::lock_guard<std::recursive_mutex> lock(mutex_);
     if (has_state(in_state_type))
     {
         current_state_ = in_state_type;
