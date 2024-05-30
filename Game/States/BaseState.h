@@ -24,5 +24,5 @@ public:
     int get_state_type() const { return state_type_; }
     
 protected:
-    int state_type_{INVALID_STATE};
+    int state_type_{-1};
 };

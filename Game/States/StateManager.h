@@ -1,4 +1,4 @@
-export module StateManager;
+#pragma once
 
 import <unordered_map>;
 import <memory>;
@@ -9,7 +9,7 @@ import InterfaceStateManager;
 
 using StatesHolder = std::unordered_map<int, std::unique_ptr<IState>>;
 
-export class StateManager final : public IStateManager
+class StateManager final : public IStateManager
 {
 public:
 
@@ -31,7 +31,7 @@ private:
     int current_state_{INVALID_STATE};
     StatesHolder states_;
     static StateManager* pinstance_;
-    //static std::mutex mutex_;
+    static std::mutex mutex_;
 
 protected:
     explicit StateManager() : IStateManager()

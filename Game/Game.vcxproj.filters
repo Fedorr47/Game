@@ -27,12 +27,15 @@
     <ClCompile Include="States\MenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="States\Modules\StateManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="States\Modules\StateManager.ixx" />
     <ClCompile Include="States\Modules\Interfaces\InterfaceState.ixx" />
     <ClCompile Include="States\Modules\Interfaces\InterfaceStateManager.ixx" />
+    <ClCompile Include="Window\BaseWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Window\Modules\Interfaces\InterfaceWindow.ixx" />
+    <ClCompile Include="States\StateManager.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="States\GameState.h">
@@ -42,6 +45,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="States\MenuState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Window\BaseWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="States\StateManager.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

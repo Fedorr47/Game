@@ -1,6 +1,6 @@
 #include <SFML/Graphics.hpp>
 
-import StateManager;
+#include "States/StateManager.h"
 #include "States/GameState.h"
 #include "States/MenuState.h"
 
