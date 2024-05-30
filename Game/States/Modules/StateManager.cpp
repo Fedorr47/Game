@@ -1,7 +1,7 @@
 ﻿module StateManager;
 
 StateManager* StateManager::pinstance_{ nullptr };
-std::mutex StateManager::mutex_;
+//std::mutex StateManager::mutex_;
 
 StateManager* StateManager::get_instance()
 {
@@ -14,7 +14,7 @@ StateManager* StateManager::get_instance()
 
 void StateManager::add_state(std::unique_ptr<IState> state)
 {
-    auto insert_pair = states_.try_emplace(state->get_state_type(), std::move(state));
+   auto insert_pair = states_.try_emplace(state->get_state_type(), std::move(state));
 }
 
 void StateManager::remove_state(int in_state_type)

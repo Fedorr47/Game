@@ -6,12 +6,6 @@ import <memory>;
 export class IStateManager
 {
 public:
-    IStateManager(const IStateManager& other) = delete;
-    IStateManager(IStateManager&& other) = delete;
-    IStateManager& operator=(const IStateManager& other) = delete;
-    IStateManager& operator=(IStateManager&& other) = delete;
-
-    IStateManager() = default;
     virtual ~IStateManager() = default;
 
     virtual void add_state(std::unique_ptr<IState> state) = 0;
